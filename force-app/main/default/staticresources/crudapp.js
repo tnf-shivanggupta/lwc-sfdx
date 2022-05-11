@@ -7919,8 +7919,10 @@
     		}
     	}
     }
-
-    customElements.define("crud-element", Crud);
+		debugger
+		if(!customElements.get("crud-element")){
+			customElements.define("crud-element", Crud);
+		}
 
     exports.Crud = Crud;
     exports.CrudButtons = CrudButtons;

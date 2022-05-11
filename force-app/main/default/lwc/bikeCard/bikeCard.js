@@ -15,8 +15,7 @@ export default class BikeCard extends LightningElement {
 		 if(this.scriptLoaded){
 			 return
 		 }
-		// loadScript(this, "https://test-3bd-dev-ed.lightning.force.com/resource/1651727161000/crudapp/Crud.js").then(() => {
-		loadScript(this, Crud + ".js").then(() => {
+		loadScript(this, Crud).then(() => {
 			this.scriptLoaded = true;
 			const testDiv =this.template.querySelector('div[data-id=crudElement]');
 			testDiv.innerHTML = "<crud-element></crud-element>"
