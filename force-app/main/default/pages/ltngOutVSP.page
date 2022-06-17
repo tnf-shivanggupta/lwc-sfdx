@@ -1,0 +1,22 @@
+<apex:page showHeader="true" standardStylesheets="false">
+	<apex:includeLightning/>
+<!-- Begin Default Content REMOVE THIS -->
+<h1>Congratulations</h1>
+This is your new Page
+<div id="lightning"></div>
+<!-- End Default Content REMOVE THIS -->
+<script>
+	$Lightning.use("c:ltngOut", function() {
+		 $Lightning.createComponent("c:bikeCard","",
+					 "lightning",
+					 function(cmp) {
+						 console.log("LWC component was created");
+						 // do some stuff
+					 },
+					 
+			 );
+		 },
+		'https://tnf-lwc-developer-edition.ap26.force.com/lwchelloworldvisualforce',
+	 );
+</script>
+</apex:page>
