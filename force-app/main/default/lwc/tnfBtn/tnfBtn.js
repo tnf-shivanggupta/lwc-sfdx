@@ -1,15 +1,15 @@
 import { LightningElement, api } from 'lwc';
 import TnfDesignSystem from '@salesforce/resourceUrl/tnfdesignsystem';
-import { loadScript } from 'lightning/platformResourceLoader';
+import { loadScript, loadStyle } from 'lightning/platformResourceLoader';
 import { addElementDynamically } from "c/utils"
-export default class DesignSystemComponents extends LightningElement {
-   @api 
+export default class TnfBtn extends LightningElement {
+	 @api 
 	 label = "Primary"
 	 @api
 	 variant = "primary"
-	 
-	 btnClicked = () => {
-		 alert("hello")
+
+	 btnClicked = (e) => {
+		 console.log("Button Clicked", e)
 	 }
 	 scriptLoaded = false;
 	 renderedCallback(){
@@ -19,7 +19,8 @@ export default class DesignSystemComponents extends LightningElement {
 			
 		Promise.all(
 			[
-				loadScript(this, TnfDesignSystem)
+				loadScript(this, TnfDesignSystem),
+				loadStyle(this, "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0")
 			]).then(() => {
 				
 				this.scriptLoaded = true;
@@ -27,7 +28,6 @@ export default class DesignSystemComponents extends LightningElement {
 				{
 					"clicked": this.btnClicked
 				})
-
 			}).catch((e) => {
 					console.log(e)
 				})
