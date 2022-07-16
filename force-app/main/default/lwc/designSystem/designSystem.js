@@ -1,4 +1,5 @@
 import { LightningElement, api } from 'lwc';
+import UserImage from '@salesforce/resourceUrl/userimage';
 
 export default class DesignSystem extends LightningElement {
 	@api avatarActions = [
@@ -25,7 +26,7 @@ export default class DesignSystem extends LightningElement {
 	];
 	@api user = {
 		name: "Shivang Sanghi",
-		avatar: "/images/photo.jpeg"
+		avatar: UserImage
 	};
 	@api account_url = "/account";
 	@api login_url = "/login";
